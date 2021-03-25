@@ -1,0 +1,14 @@
+package capgemini.Servers;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+@EnablePostcodeServer
+public class PostcodesServer {
+
+				public static void main(String[] args) {
+    				System.setProperty("spring.config.name", "postcodes-server");
+    				SpringApplication.run(PostcodesServer.class, args); 
+    }
+}

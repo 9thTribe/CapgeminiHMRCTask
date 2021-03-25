@@ -1,0 +1,33 @@
+package capgemini.Controllers;
+
+import java.util.logging.Logger;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+
+@RestController
+public class PoliceDateController {
+
+    protected Logger logger = Logger.getLogger(PoliceDateController.class
+            .getName());
+    
+    public Url policeDateServer = "https://data.police.uk/docs/"
+    public String postcodeServerUrl = "https://postcodes.io/"
+				
+    @RequestMapping("/crimes")
+    public String doCrimes(@RequestParam(defaultValue="0") policeDateServer,
+
+            @RequestParam(defaultValue="0") String crime) {
+
+        int latitude = Integer.valueOf(latitude);
+        int longitude = Integer.valueOf(longitude);
+        int postcode = String.valueOf(postcode);
+        String outcome_status = String.copyValueOf(outcome_status);
+        String date = String.copyValueOf(date);
+
+        return "{\"longitude\":\"" + longitude + "\", \"latitude\":\"" + latitude + "\", \"postcode\": \"" + postcode + "\", \"outcome_status\": \"" + outcome_status + "\", \"date\": \"" + date + "\"""}";
+
+    }
+}

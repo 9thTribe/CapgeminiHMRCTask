@@ -1,0 +1,13 @@
+# Spring properties
+spring.application.name=police-date-service
+spring.freemarker.enabled=false
+spring.thymeleaf.cache=false
+spring.thymeleaf.prefix=classpath:/police-date-server/crime/categories
+ 
+error.path: /error
+ 
+# HTTPS Server
+ 
+postcodes.client.serviceUrl.defaultZone=https://postcodes.io/postcodes/
+postcodes.client.instance.leaseRenewalIntervalInSeconds=5
+management.endpoints.web.exposure.include='*'

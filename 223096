@@ -1,0 +1,32 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="header :: copy"></head>
+
+<body>
+
+	<h1>Capgemini HMRC Account Software Engineering Task</h1>
+	<h3>Crimes by Area Service</h3>
+	<form action="/crimes">
+	  	category :<br>
+	  	<input type="number" name="category" value="0">
+	  	<br>
+	  	location :<br>
+	  	<input type="number" name="latitude" value="0">
+	  	<br><br>
+	    <input type="number" name="longitude" value="0">
+	    <br><br>
+	    <input type="number" name="postcode" value="0">
+	    <br><br>
+	    context :<br>
+	    <input type="number" name="outcome_status" value="0">
+	    <br><br>
+	    <input type="string" name="month" value="0">
+	    <br><br>
+	</form>
+
+	<div th:replace="footer :: copy"></div
+
+</body>
+</html>

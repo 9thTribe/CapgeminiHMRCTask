@@ -1,0 +1,77 @@
+package capgemini.Controllers;
+
+import java.util.logging.Logger;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class WebArithmeticController {
+    
+    @Autowired
+    protected WebAdditionService springBootMicroService;
+ 
+    protected Logger logger = Logger.getLogger(WebArithmeticController.class
+
+            .getName());
+            
+    private Integer successCode = 200;
+    private Integer invalidDataCode = 400;
+    private Integer noDataFoundCode = 404;
+				private String postcode = null;
+				private Date date = null;
+
+    public WebArithmeticController(WebAdditionService springBootMicroService) {
+
+        this.springBootMicroService = springBootMicroService;
+    }
+
+ 
+    @RequestMapping("/add")
+    public String doPostcodes(@RequestParam(defaultValue="0") String categories,
+
+            @RequestParam(defaultValue="0") String successful, String noDataFound
+
+            Model model) { 
+
+        logger.info("Successful: " + successful);
+        logger.info("No Data Found: " + noDataFound);
+
+            if (successful):
+                result = successCode;
+            else:
+                result = noDataFoundCode;
+            
+        model.addAttribute("json", result);
+
+        return "result";
+
+    }
+
+ 
+
+    @RequestMapping("/subtract")
+    public String doPoliceData(@RequestParam(defaultValue="0") String crimes,
+            
+        				@RequestParam(defaultValue="0") String postcode,
+            Model model) {
+
+        String difference = springBootMicroService.subtract(postcode, date);
+            if (postcode != null && data != null) {
+															response = invalidDataCode;
+            } else if(postcode == null && data == null) {
+            				response = noDataFoundCode;
+        				} else {
+       									response = successCode;     
+        }
+
+        logger.info("Difference: " + difference);
+        model.addAttribute("json", difference);
+
+        return "difference";
+    }
+
+}

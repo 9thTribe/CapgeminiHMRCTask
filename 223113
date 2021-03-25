@@ -1,0 +1,13 @@
+# Spring properties
+spring.application.name=postcodes-service
+spring.freemarker.enabled=false
+spring.thymeleaf.cache=false
+spring.thymeleaf.prefix=classpath:/postcodes-server/crimes?postcode={postcode}&date={yyyy-mm}
+
+error.path: /error
+ 
+# HTTPS Server
+ 
+police-data.client.serviceUrl.defaultZone=https://data.police.uk/docs/
+police-data.client.instance.leaseRenewalIntervalInSeconds=5
+management.endpoints.web.exposure.include='*'
